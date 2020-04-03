@@ -1,3 +1,3 @@
-def call(String project) {
-    sh "docker rmi ${project}-beta-${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
+def call(String project, String hubUser) {
+    sh "docker rmi ${hubUser}/${project}:${env.BUILD_NUMBER}"
 }
