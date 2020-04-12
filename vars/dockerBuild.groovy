@@ -1,5 +1,5 @@
 def call(String project, String hubUser) {
-    sh "docker image build -t ${hubUser}/${project}:${BUILD_NUMBER} ."
+    dockerImage = docker.build registry + ":$BUILD_NUMBER"
     withCredentials([usernamePassword(
             credentialsId: "docker",
             usernameVariable: "USER",
@@ -7,6 +7,8 @@ def call(String project, String hubUser) {
     )]) {
         sh "docker login -u '$USER' -p '$PASS'"
     }
-    sh "docker image push ${hubUser}/${project}:${BUILD_NUMBER}"
-    sh "docker image push ${hubUser}/${project}:latest"
+    docker.withRegistry( '', docker ) {
+         dockerImage.push("$BUILD_NUMBER")
+         dockerImage.push("latest")
+    }
 }
