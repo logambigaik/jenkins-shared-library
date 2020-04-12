@@ -1,5 +1,5 @@
 def call(String project, String hubUser) {
-    sh "docker image build -t ${hubUser}/${project}:${env.BUILD_NUMBER} ."
+    sh "docker image build -t ${hubUser}/${project} ."
     withCredentials([usernamePassword(
             credentialsId: "docker",
             usernameVariable: "USER",
