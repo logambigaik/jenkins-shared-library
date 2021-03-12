@@ -115,8 +115,8 @@ As shown below
 	            dockerCleanup ( "springboot-helm-chart", "naresh240" )
 	        }
 	    }
-    }
-}
+      }
+   }
 
 
 
