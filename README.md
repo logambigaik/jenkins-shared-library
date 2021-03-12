@@ -81,15 +81,15 @@ As shown below
  
 #Click on pipeline and add below pipeline script
 
-		@Library('jenkins-shared-library@master') _
-		pipeline {
-    		 agent any
-    		 tools{ 
-        		maven 'maven3'
-    		  }
-    		 stages {
-        		stage('Git Checkout') {
-            	steps {
+@Library('jenkins-shared-library@master') _
+	pipeline {
+     	 agent any
+   	 tools{ 
+       		maven 'maven3'
+   	  }
+   	 stages {
+  	   stage('Git Checkout') {
+             steps {
                 gitCheckout(
                     branch: "master",
                     url: "https://github.com/Naresh240/springboot-helm-chart.git"
