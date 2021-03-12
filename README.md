@@ -81,7 +81,7 @@ As shown below
  
 #Click on pipeline and add below pipeline script
 
-@Library('jenkins-shared-library@master') _
+   @Library('jenkins-shared-library@master') _
 	pipeline {
      	 agent any
    	 tools{ 
