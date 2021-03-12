@@ -2,10 +2,10 @@
 
 Pre-requisites:
 ==============
-		Install Git
-		Install Maven
-		Install Docker
-		Install Jenkins
+    		Install Git
+    		Install Maven
+    		Install Docker
+    		Install Jenkins
 
 #Create a Directory structure for Jenkins Shared Library as shown below
  
